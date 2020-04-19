@@ -39,7 +39,7 @@ namespace Police
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            CR =  (NI * 2 + CORR * 1000 - PE * 100);
+            CR = CR + (NI * 2 + CORR * 1000 - PE * 100);
             if (CR / 10000 <= 1 / 3)
                 CRL = 1;//1 - низкий
             else if (CR / 10000 > 1 / 3 && CR / 10000 <= 2 / 3)
@@ -47,7 +47,10 @@ namespace Police
             else if (CR / 10000 > 2 / 3)
                 CRL = 3;//3 - высокий --Уровень преступности
             R = (rnd.Next(0, 30)/100);
-            CRLGOVCARE = CRL / 3 - R;
+            if (CRL / 3 - R > 0)
+                CRLGOVCARE = CRL / 3 - R;
+            else
+                CRLGOVCARE = CRL / 3;
             PB = CRLGOVCARE * 100000000 - CORR * 750000;
 
             if (PB / (SALARY * (PDS + 1) * 100) < 2 / 3)
@@ -56,12 +59,17 @@ namespace Police
                 PDS = (int)((PB * 3) / (2 * SALARY * 100));
             PMEN = 100 * PDS;
 
-            if ( SALARY <= ( (PB * 3) / (2* PDS * 100)) )
-                SALARY = (int)((PB - (PB / 25)) * 100 / PMEN);
-            MORAL = SALARY / 50000 - CR / 10000;
+            if (SALARY <= ((PB * 3) / (2 * PDS * 100)))
+                SALARY = (int)((PB * 3) / (2 * PDS * 100));
+            if (SALARY / 50000 - CR / 10000 > 1)
+                MORAL = 1;
+            else if (SALARY / 50000 - CR / 10000 < 0)
+                MORAL = 0.01;
+            else
+                MORAL = SALARY / 50000 - CR / 10000;
             CORR = 1 - MORAL;
             PWE = MORAL - 0.05;
-            PE = PWE  / PMEN ;/////////
+            PE = PWE  / PMEN  ;/////////
 
             NItext.Text = NI.ToString();
             CRtext.Text = CR.ToString();
