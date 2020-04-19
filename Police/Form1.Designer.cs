@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.pmSalary = new System.Windows.Forms.Label();
@@ -107,7 +107,7 @@
             this.panel1.Controls.Add(this.buttonStart);
             this.panel1.Location = new System.Drawing.Point(13, 13);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(932, 150);
+            this.panel1.Size = new System.Drawing.Size(1762, 150);
             this.panel1.TabIndex = 0;
             // 
             // pmSalary
@@ -308,7 +308,7 @@
             // 
             // crimesValue
             // 
-            this.crimesValue.Location = new System.Drawing.Point(287, 35);
+            this.crimesValue.Location = new System.Drawing.Point(291, 35);
             this.crimesValue.Maximum = new decimal(new int[] {
             100000000,
             0,
@@ -358,19 +358,19 @@
             // 
             // chartPolice
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartPolice.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartPolice.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.chartPolice.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartPolice.Legends.Add(legend1);
             this.chartPolice.Location = new System.Drawing.Point(13, 169);
             this.chartPolice.Name = "chartPolice";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.IsValueShownAsLabel = true;
-            series2.Legend = "Legend1";
-            series2.Name = "Crimes";
-            this.chartPolice.Series.Add(series2);
-            this.chartPolice.Size = new System.Drawing.Size(929, 273);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.IsValueShownAsLabel = true;
+            series1.Legend = "Legend1";
+            series1.Name = "Crimes";
+            this.chartPolice.Series.Add(series1);
+            this.chartPolice.Size = new System.Drawing.Size(1762, 697);
             this.chartPolice.TabIndex = 1;
             this.chartPolice.Text = "chart5";
             // 
@@ -378,7 +378,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(957, 453);
+            this.ClientSize = new System.Drawing.Size(1787, 878);
             this.Controls.Add(this.chartPolice);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
