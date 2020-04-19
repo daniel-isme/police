@@ -25,8 +25,8 @@ namespace Police
         double PB = 300000;//Бюджет полиции
         double SALARY = 60000;//ЗП
         double MORAL = 0.68;//Мораль
-        double CORR = 0.53;//Коррупция
-        double PDS = 2;//Количество отделений(целое число)
+        double CORR = 0.32;//Коррупция
+        int PDS = 2;//Количество отделений(целое число)
         double PMEN = 200;//Штат
         double PE = 3;//Эффективность полиции
         double PWE = 0.6;//Качество работы
@@ -48,24 +48,30 @@ namespace Police
                 CRL = 3;//3 - высокий --Уровень преступности
             R = (rnd.Next(0, 30)/100);
             CRLGOVCARE = CRL / 3 - R;
-            PB = CRLGOVCARE * 1000000 - CORR * 40000;
-            SALARY = (PB - (PB / 25)) / PMEN ;
+            PB = CRLGOVCARE * 100000000 - CORR * 750000;
+
+            if (PB / (SALARY * (PDS + 1) * 100) < 2 / 3)
+                PDS++;
+            else if (((PB * 3) / (2 * SALARY * 100)) >= PDS)
+                PDS = (int)((PB * 3) / (2 * SALARY * 100));
+            PMEN = 100 * PDS;
+
+            if ( SALARY <= ( (PB * 3) / (2* PDS * 100)) )
+                SALARY = (int)((PB - (PB / 25)) * 100 / PMEN);
             MORAL = SALARY / 50000 - CR / 10000;
             CORR = 1 - MORAL;
-            PDS = PDS + (PB / 10000 * PDS - 0.5);
-            PMEN = 100 * PDS;
             PWE = MORAL - 0.05;
-            PE = PWE  / PMEN;/////////
+            PE = PWE  / PMEN ;/////////
 
             NItext.Text = NI.ToString();
             CRtext.Text = CR.ToString();
             CRLtext.Text = CRL.ToString();
             CRLGOVCAREtext.Text = CRLGOVCARE.ToString();
             PBtext.Text = PB.ToString();
-            SALARYtext.Text = SALARY.ToString();
+            SALARYtext.Text = ((int)SALARY).ToString();
             MORALtext.Text = MORAL.ToString();
             CORRtext.Text = CORR.ToString();
-            PDStext.Text = PDS.ToString();
+            PDStext.Text = ((int)PDS).ToString();
             PMENtext.Text = PMEN.ToString();
             PEtext.Text = PE.ToString();
             PWEtext.Text = PWE.ToString();
