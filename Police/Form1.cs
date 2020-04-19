@@ -12,77 +12,68 @@ namespace Police
 {
     public partial class Form1 : Form
     {
-
+        int crimes, deps, thiefs, pMen, i = 1;
+        double crimeLev, corr, pE, govCareLev, pBudget, pmSal, pMoral, pWE;
+        Random R = new Random();
         public Form1()
         {
             InitializeComponent();    
         }
-        Random rnd = new Random();
-        double NI = 3000; //число из вне(изменяющееся со временем) ) -- Преступники
-        double CR = 6230; //Преступления
-        double CRL = 2;// Уровень преступности
-        double CRLGOVCARE = 0.5;//Обеспокоенноть государства
-        double PB = 300000;//Бюджет полиции
-        double SALARY = 60000;//ЗП
-        double MORAL = 0.68;//Мораль
-        double CORR = 0.32;//Коррупция
-        int PDS = 2;//Количество отделений(целое число)
-        double PMEN = 200;//Штат
-        double PE = 3;//Эффективность полиции
-        double PWE = 0.6;//Качество работы
-        double R = 0.3;//число от 0 до 0.30
-
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonStart_Click(object sender, EventArgs e)
         {
-            timer1.Start();
+            crimes = (int)crimesValue.Value;
+            deps = (int)depsValue.Value;
+            thiefs = (int)thiefsValue.Value;
+            chartPolice.Series[0].Points.Clear();
+            chartPolice.Series[0].Points.AddXY(0, crimes);
+            timer.Start();
         }
-
-        private void timer1_Tick(object sender, EventArgs e)
+        private void timer_Tick(object sender, EventArgs e)
         {
-            CR = CR + (NI * 2 + CORR * 1000 - PE * 100);
-            if (CR / 10000 <= 1 / 3)
-                CRL = 1;//1 - низкий
-            else if (CR / 10000 > 1 / 3 && CR / 10000 <= 2 / 3)
-                CRL = 2;//2 - средний
-            else if (CR / 10000 > 2 / 3)
-                CRL = 3;//3 - высокий --Уровень преступности
-            R = (rnd.Next(0, 30)/100);
-            if (CRL / 3 - R > 0)
-                CRLGOVCARE = CRL / 3 - R;
-            else
-                CRLGOVCARE = CRL / 3;
-            PB = CRLGOVCARE * 100000000 - CORR * 750000;
-
-            if (PB / (SALARY * (PDS + 1) * 100) < 2 / 3)
-                PDS++;
-            else if (((PB * 3) / (2 * SALARY * 100)) >= PDS)
-                PDS = (int)((PB * 3) / (2 * SALARY * 100));
-            PMEN = 100 * PDS;
-
-            if (SALARY <= ((PB * 3) / (2 * PDS * 100)))
-                SALARY = (int)((PB * 3) / (2 * PDS * 100));
-            if (SALARY / 50000 - CR / 10000 > 1)
-                MORAL = 1;
-            else if (SALARY / 50000 - CR / 10000 < 0)
-                MORAL = 0.01;
-            else
-                MORAL = SALARY / 50000 - CR / 10000;
-            CORR = 1 - MORAL;
-            PWE = MORAL - 0.05;
-            PE = PWE  / PMEN  ;/////////
-
-            NItext.Text = NI.ToString();
-            CRtext.Text = CR.ToString();
-            CRLtext.Text = CRL.ToString();
-            CRLGOVCAREtext.Text = CRLGOVCARE.ToString();
-            PBtext.Text = PB.ToString();
-            SALARYtext.Text = ((int)SALARY).ToString();
-            MORALtext.Text = MORAL.ToString();
-            CORRtext.Text = CORR.ToString();
-            PDStext.Text = ((int)PDS).ToString();
-            PMENtext.Text = PMEN.ToString();
-            PEtext.Text = PE.ToString();
-            PWEtext.Text = PWE.ToString();
+            crimeLev = crimes / 1000;
+            govCareLev = crimeLev / 2; //- (R.NextDouble() % 0.3);
+            pBudget = (govCareLev + 0.1) * 1000000 - corr * 7500;
+            if (pBudget < 0)
+                pBudget = 0;
+            deps = (int)(deps + (pBudget / 500000 - 2));
+            if (deps < 1)
+                deps = 1;
+            pMen = 20 * deps;
+            pmSal = (pBudget - (pBudget / 500000)) / pMen;
+            if (pmSal < 0)
+                pmSal = 0;
+            pMoral = pmSal / 2500 - crimes / 15000;
+            if (pMoral <= 0)
+                pMoral = 0.000001;
+            if (pMoral > 1)
+                pMoral = 1;
+            corr = 1 / (pMoral * 100);
+            if (corr < 0)
+                corr = 0;
+            if (corr > 1)
+                corr = 1;
+            pWE = pMoral - 0.05;
+            if (pWE < 0)
+                pWE = 0;
+            pE = pWE / pMen * 100;
+            if (pE < 0)
+                pE = 0;
+            if (pE > 1)
+                pE = 1;
+            crimes += (int)(thiefs + corr * 25 - pE * 1000);
+            if (crimes < 0)
+                crimes = 0;
+            crimeLevel.Text = (crimeLev * 100).ToString() + "%";
+            CorrLevel.Text = (corr * 100).ToString() + "%";
+            govCareLevel.Text = (govCareLev * 100).ToString() + "%";
+            pB.Text = pBudget.ToString();
+            pDValue.Text = deps.ToString();
+            pEValue.Text = pMen.ToString();
+            moralLevel.Text = (pMoral * 100).ToString() + "%";
+            pmSalary.Text = pmSal.ToString();
+            chartPolice.Series[0].Points.AddXY(i, crimes);
+            i++;
+            thiefs = R.Next() % 50;
         }
     }
 }
