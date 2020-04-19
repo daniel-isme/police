@@ -32,22 +32,22 @@ namespace Police
         {
             crimeLev = crimes / 1000;
             govCareLev = crimeLev / 2; //- (R.NextDouble() % 0.3);
-            pBudget = govCareLev * 1000000 - corr * 75000;
+            pBudget = (govCareLev + 0.1) * 1000000 - corr * 7500;
             if (pBudget < 0)
                 pBudget = 0;
-            deps = (int)(deps + (pBudget / 500000 - 1));
+            deps = (int)(deps + (pBudget / 500000 - 2));
             if (deps < 1)
                 deps = 1;
             pMen = 20 * deps;
             pmSal = (pBudget - (pBudget / 500000)) / pMen;
             if (pmSal < 0)
                 pmSal = 0;
-            pMoral = pmSal / 500 - crimes / 1500;
+            pMoral = pmSal / 2500 - crimes / 15000;
             if (pMoral <= 0)
                 pMoral = 0.000001;
             if (pMoral > 1)
                 pMoral = 1;
-            corr = 1 / (pMoral * 10);
+            corr = 1 / (pMoral * 100);
             if (corr < 0)
                 corr = 0;
             if (corr > 1)
@@ -60,7 +60,7 @@ namespace Police
                 pE = 0;
             if (pE > 1)
                 pE = 1;
-            crimes += (int)(thiefs + corr * 50 - pE * 2000);
+            crimes += (int)(thiefs + corr * 25 - pE * 1000);
             if (crimes < 0)
                 crimes = 0;
             crimeLevel.Text = (crimeLev * 100).ToString() + "%";
