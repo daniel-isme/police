@@ -28,90 +28,92 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.PDS = new System.Windows.Forms.TextBox();
-            this.PMEN = new System.Windows.Forms.TextBox();
-            this.SALARY = new System.Windows.Forms.TextBox();
-            this.PB = new System.Windows.Forms.TextBox();
-            this.CRLGOVCARE = new System.Windows.Forms.TextBox();
             this.components = new System.ComponentModel.Container();
-            this.CR = new System.Windows.Forms.TextBox();
-            this.PE = new System.Windows.Forms.TextBox();
-            this.PWE = new System.Windows.Forms.TextBox();
-            this.CRL = new System.Windows.Forms.TextBox();
-            this.MORAL = new System.Windows.Forms.TextBox();
+            this.PDStext = new System.Windows.Forms.TextBox();
+            this.PMENtext = new System.Windows.Forms.TextBox();
+            this.SALARYtext = new System.Windows.Forms.TextBox();
+            this.PBtext = new System.Windows.Forms.TextBox();
+            this.CRLGOVCAREtext = new System.Windows.Forms.TextBox();
+            this.CRtext = new System.Windows.Forms.TextBox();
+            this.PEtext = new System.Windows.Forms.TextBox();
+            this.PWEtext = new System.Windows.Forms.TextBox();
+            this.CRLtext = new System.Windows.Forms.TextBox();
+            this.MORALtext = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.CORRtext = new System.Windows.Forms.TextBox();
+            this.NItext = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // PDS
+            // PDStext
             // 
-            this.PDS.Location = new System.Drawing.Point(113, 39);
-            this.PDS.Name = "PDS";
-            this.PDS.Size = new System.Drawing.Size(100, 22);
-            this.PDS.TabIndex = 0;
+            this.PDStext.Location = new System.Drawing.Point(106, 49);
+            this.PDStext.Name = "PDStext";
+            this.PDStext.Size = new System.Drawing.Size(100, 22);
+            this.PDStext.TabIndex = 0;
             // 
-            // PMEN
+            // PMENtext
             // 
-            this.PMEN.Location = new System.Drawing.Point(253, 49);
-            this.PMEN.Name = "PMEN";
-            this.PMEN.Size = new System.Drawing.Size(100, 22);
-            this.PMEN.TabIndex = 1;
+            this.PMENtext.Location = new System.Drawing.Point(264, 59);
+            this.PMENtext.Name = "PMENtext";
+            this.PMENtext.Size = new System.Drawing.Size(100, 22);
+            this.PMENtext.TabIndex = 1;
             // 
-            // SALARY
+            // SALARYtext
             // 
-            this.SALARY.Location = new System.Drawing.Point(312, 161);
-            this.SALARY.Name = "SALARY";
-            this.SALARY.Size = new System.Drawing.Size(100, 22);
-            this.SALARY.TabIndex = 2;
+            this.SALARYtext.Location = new System.Drawing.Point(324, 161);
+            this.SALARYtext.Name = "SALARYtext";
+            this.SALARYtext.Size = new System.Drawing.Size(100, 22);
+            this.SALARYtext.TabIndex = 2;
             // 
-            // PB
+            // PBtext
             // 
-            this.PB.Location = new System.Drawing.Point(85, 298);
-            this.PB.Name = "PB";
-            this.PB.Size = new System.Drawing.Size(100, 22);
-            this.PB.TabIndex = 3;
+            this.PBtext.Location = new System.Drawing.Point(81, 314);
+            this.PBtext.Name = "PBtext";
+            this.PBtext.Size = new System.Drawing.Size(100, 22);
+            this.PBtext.TabIndex = 3;
             // 
-            // CRLGOVCARE
+            // CRLGOVCAREtext
             // 
-            this.CRLGOVCARE.Location = new System.Drawing.Point(169, 428);
-            this.CRLGOVCARE.Name = "CRLGOVCARE";
-            this.CRLGOVCARE.Size = new System.Drawing.Size(100, 22);
-            this.CRLGOVCARE.TabIndex = 4;
+            this.CRLGOVCAREtext.Location = new System.Drawing.Point(173, 445);
+            this.CRLGOVCAREtext.Name = "CRLGOVCAREtext";
+            this.CRLGOVCAREtext.Size = new System.Drawing.Size(100, 22);
+            this.CRLGOVCAREtext.TabIndex = 4;
             // 
-            // CR
+            // CRtext
             // 
-            this.CR.Location = new System.Drawing.Point(731, 327);
-            this.CR.Name = "CR";
-            this.CR.Size = new System.Drawing.Size(100, 22);
-            this.CR.TabIndex = 0;
+            this.CRtext.Location = new System.Drawing.Point(741, 339);
+            this.CRtext.Name = "CRtext";
+            this.CRtext.Size = new System.Drawing.Size(100, 22);
+            this.CRtext.TabIndex = 0;
             // 
-            // PE
+            // PEtext
             // 
-            this.PE.Location = new System.Drawing.Point(794, 178);
-            this.PE.Name = "PE";
-            this.PE.Size = new System.Drawing.Size(100, 22);
-            this.PE.TabIndex = 1;
+            this.PEtext.Location = new System.Drawing.Point(815, 176);
+            this.PEtext.Name = "PEtext";
+            this.PEtext.Size = new System.Drawing.Size(100, 22);
+            this.PEtext.TabIndex = 1;
             // 
-            // PWE
+            // PWEtext
             // 
-            this.PWE.Location = new System.Drawing.Point(675, 130);
-            this.PWE.Name = "PWE";
-            this.PWE.Size = new System.Drawing.Size(100, 22);
-            this.PWE.TabIndex = 2;
+            this.PWEtext.Location = new System.Drawing.Point(684, 140);
+            this.PWEtext.Name = "PWEtext";
+            this.PWEtext.Size = new System.Drawing.Size(100, 22);
+            this.PWEtext.TabIndex = 2;
             // 
-            // CRL
+            // CRLtext
             // 
-            this.CRL.Location = new System.Drawing.Point(523, 431);
-            this.CRL.Name = "CRL";
-            this.CRL.Size = new System.Drawing.Size(100, 22);
-            this.CRL.TabIndex = 3;
+            this.CRLtext.Location = new System.Drawing.Point(523, 431);
+            this.CRLtext.Name = "CRLtext";
+            this.CRLtext.Size = new System.Drawing.Size(100, 22);
+            this.CRLtext.TabIndex = 3;
             // 
-            // MORAL
+            // MORALtext
             // 
-            this.MORAL.Location = new System.Drawing.Point(548, 155);
-            this.MORAL.Name = "MORAL";
-            this.MORAL.Size = new System.Drawing.Size(100, 22);
-            this.MORAL.TabIndex = 4;
+            this.MORALtext.Location = new System.Drawing.Point(542, 161);
+            this.MORALtext.Name = "MORALtext";
+            this.MORALtext.Size = new System.Drawing.Size(100, 22);
+            this.MORALtext.TabIndex = 4;
             // 
             // button1
             // 
@@ -123,23 +125,45 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // CORRtext
+            // 
+            this.CORRtext.Location = new System.Drawing.Point(411, 339);
+            this.CORRtext.Name = "CORRtext";
+            this.CORRtext.Size = new System.Drawing.Size(100, 22);
+            this.CORRtext.TabIndex = 6;
+            // 
+            // NItext
+            // 
+            this.NItext.Location = new System.Drawing.Point(794, 445);
+            this.NItext.Name = "NItext";
+            this.NItext.Size = new System.Drawing.Size(100, 22);
+            this.NItext.TabIndex = 7;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Police.Properties.Resources.scheme;
-            this.ClientSize = new System.Drawing.Size(906, 479);
-            this.Controls.Add(this.CRLGOVCARE);
-            this.Controls.Add(this.PB);
-            this.Controls.Add(this.SALARY);
-            this.Controls.Add(this.PMEN);
-            this.Controls.Add(this.PDS);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(958, 503);
+            this.Controls.Add(this.NItext);
+            this.Controls.Add(this.CORRtext);
+            this.Controls.Add(this.CRLGOVCAREtext);
+            this.Controls.Add(this.PBtext);
+            this.Controls.Add(this.SALARYtext);
+            this.Controls.Add(this.PMENtext);
+            this.Controls.Add(this.PDStext);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.MORAL);
-            this.Controls.Add(this.CRL);
-            this.Controls.Add(this.PWE);
-            this.Controls.Add(this.PE);
-            this.Controls.Add(this.CR);
+            this.Controls.Add(this.MORALtext);
+            this.Controls.Add(this.CRLtext);
+            this.Controls.Add(this.PWEtext);
+            this.Controls.Add(this.PEtext);
+            this.Controls.Add(this.CRtext);
+            this.DoubleBuffered = true;
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -149,19 +173,21 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox PDS;
-        private System.Windows.Forms.TextBox PMEN;
-        private System.Windows.Forms.TextBox SALARY;
-        private System.Windows.Forms.TextBox PB;
-        private System.Windows.Forms.TextBox CRLGOVCARE;
+        private System.Windows.Forms.TextBox PDStext;
+        private System.Windows.Forms.TextBox PMENtext;
+        private System.Windows.Forms.TextBox SALARYtext;
+        private System.Windows.Forms.TextBox PBtext;
+        private System.Windows.Forms.TextBox CRLGOVCAREtext;
 
-        private System.Windows.Forms.TextBox CR;
-        private System.Windows.Forms.TextBox PE;
-        private System.Windows.Forms.TextBox PWE;
-        private System.Windows.Forms.TextBox CRL;
-        private System.Windows.Forms.TextBox MORAL;
+        private System.Windows.Forms.TextBox CRtext;
+        private System.Windows.Forms.TextBox PEtext;
+        private System.Windows.Forms.TextBox PWEtext;
+        private System.Windows.Forms.TextBox CRLtext;
+        private System.Windows.Forms.TextBox MORALtext;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.TextBox CORRtext;
+        private System.Windows.Forms.TextBox NItext;
     }
 }
 
