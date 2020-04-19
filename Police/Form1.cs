@@ -17,7 +17,7 @@ namespace Police
         Random R = new Random();
         public Form1()
         {
-            InitializeComponent();
+            InitializeComponent();    
         }
         private void buttonStart_Click(object sender, EventArgs e)
         {

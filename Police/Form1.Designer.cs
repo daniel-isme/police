@@ -374,6 +374,25 @@
             this.chartPolice.TabIndex = 1;
             this.chartPolice.Text = "chart5";
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 2000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // CORRtext
+            // 
+            this.CORRtext.Location = new System.Drawing.Point(411, 339);
+            this.CORRtext.Name = "CORRtext";
+            this.CORRtext.Size = new System.Drawing.Size(100, 22);
+            this.CORRtext.TabIndex = 6;
+            // 
+            // NItext
+            // 
+            this.NItext.Location = new System.Drawing.Point(794, 445);
+            this.NItext.Name = "NItext";
+            this.NItext.Size = new System.Drawing.Size(100, 22);
+            this.NItext.TabIndex = 7;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -429,6 +448,7 @@
         private System.Windows.Forms.Label govCareLevel;
         private System.Windows.Forms.Label CorrLevel;
         private System.Windows.Forms.Label crimeLevel;
+
     }
 }
 
