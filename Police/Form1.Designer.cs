@@ -28,6 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.PDS = new System.Windows.Forms.TextBox();
+            this.PMEN = new System.Windows.Forms.TextBox();
+            this.SALARY = new System.Windows.Forms.TextBox();
+            this.PB = new System.Windows.Forms.TextBox();
+            this.CRLGOVCARE = new System.Windows.Forms.TextBox();
             this.components = new System.ComponentModel.Container();
             this.CR = new System.Windows.Forms.TextBox();
             this.PE = new System.Windows.Forms.TextBox();
@@ -37,6 +42,41 @@
             this.button1 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
+            // 
+            // PDS
+            // 
+            this.PDS.Location = new System.Drawing.Point(113, 39);
+            this.PDS.Name = "PDS";
+            this.PDS.Size = new System.Drawing.Size(100, 22);
+            this.PDS.TabIndex = 0;
+            // 
+            // PMEN
+            // 
+            this.PMEN.Location = new System.Drawing.Point(253, 49);
+            this.PMEN.Name = "PMEN";
+            this.PMEN.Size = new System.Drawing.Size(100, 22);
+            this.PMEN.TabIndex = 1;
+            // 
+            // SALARY
+            // 
+            this.SALARY.Location = new System.Drawing.Point(312, 161);
+            this.SALARY.Name = "SALARY";
+            this.SALARY.Size = new System.Drawing.Size(100, 22);
+            this.SALARY.TabIndex = 2;
+            // 
+            // PB
+            // 
+            this.PB.Location = new System.Drawing.Point(85, 298);
+            this.PB.Name = "PB";
+            this.PB.Size = new System.Drawing.Size(100, 22);
+            this.PB.TabIndex = 3;
+            // 
+            // CRLGOVCARE
+            // 
+            this.CRLGOVCARE.Location = new System.Drawing.Point(169, 428);
+            this.CRLGOVCARE.Name = "CRLGOVCARE";
+            this.CRLGOVCARE.Size = new System.Drawing.Size(100, 22);
+            this.CRLGOVCARE.TabIndex = 4;
             // 
             // CR
             // 
@@ -89,6 +129,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Police.Properties.Resources.scheme;
             this.ClientSize = new System.Drawing.Size(906, 479);
+            this.Controls.Add(this.CRLGOVCARE);
+            this.Controls.Add(this.PB);
+            this.Controls.Add(this.SALARY);
+            this.Controls.Add(this.PMEN);
+            this.Controls.Add(this.PDS);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.MORAL);
             this.Controls.Add(this.CRL);
@@ -103,6 +148,12 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.TextBox PDS;
+        private System.Windows.Forms.TextBox PMEN;
+        private System.Windows.Forms.TextBox SALARY;
+        private System.Windows.Forms.TextBox PB;
+        private System.Windows.Forms.TextBox CRLGOVCARE;
 
         private System.Windows.Forms.TextBox CR;
         private System.Windows.Forms.TextBox PE;
